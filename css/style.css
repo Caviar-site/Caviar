@@ -259,27 +259,6 @@ main {
   box-shadow: 0 0 30px rgba(0,0,0,0.7);
 }
 
-/* Dots */
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  gap: 10px;
-  z-index: 2;
-}
-.carousel-dots .dot {
-  width: 12px;
-  height: 12px;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 50%;
-  cursor: pointer;
-}
-.carousel-dots .dot.active {
-  background: #F36F21;
-}
 
 /* Arrows */
 .carousel-arrow {
