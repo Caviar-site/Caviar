@@ -1,5 +1,4 @@
 const images = document.querySelectorAll('.carousel-images img');
-const dots = document.querySelectorAll('.carousel-dots .dot');
 const prevButton = document.querySelector('.carousel-arrow.prev');
 const nextButton = document.querySelector('.carousel-arrow.next');
 const carouselImages = document.querySelector('.carousel-images');
@@ -11,7 +10,6 @@ let interval;
 function updateSlidePosition() {
   const width = carouselImages.clientWidth;
   carouselImages.style.transform = `translateX(-${currentIndex * width}px)`;
-  dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
 }
 
 function updateCredit(index) {
@@ -40,13 +38,6 @@ function resetInterval() {
   interval = setInterval(nextSlide, 5000);
 }
 
-// Navigation via dots
-dots.forEach((dot, index) => {
-  dot.addEventListener('click', () => {
-    showSlide(index);
-    resetInterval();
-  });
-});
 
 // Navigation via arrows
 nextButton.addEventListener('click', () => {
