@@ -210,13 +210,14 @@ main {
   bottom: 12px;
   right: 12px;  
   color: rgba(255, 255, 255, 0.85);
-  font-size: 1,2rem;
+  font-size: 1.2rem;
   font-weight: 500;
   text-shadow: 0 0 5px rgba(0,0,0,0.7);
-  pointer-events: none; /* pour que ça ne bloque pas les clics */
+  pointer-events: none;
   user-select: none;
   z-index: 5;
 }
+
 
 .carousel-images {
   display: flex;
