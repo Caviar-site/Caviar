@@ -22,7 +22,7 @@ a {
 header {
   position: sticky;
   top: 0;
-  background: white;
+  background: white; 
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   z-index: 100;
   display: flex;
@@ -30,14 +30,16 @@ header {
   justify-content: space-between;
   padding: 15px 40px;
   border-bottom: 2px solid #00AEEF;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-header.hide-on-scroll {
-  transform: translateY(-100%);
+/* Header hide on scroll: plus rapide disparition */
+header.scrolled {
   opacity: 0;
+  transform: translateY(-20px);
   pointer-events: none;
 }
+
 
 .logo img {
   height: 50px;
