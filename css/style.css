@@ -18,17 +18,25 @@ a {
 }
 
 /* Header */
+
 header {
   position: sticky;
   top: 0;
-  background: white; 
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px 40px;
-  border-bottom: 2px solid #00AEEF; /* Ligne fine bleue en bas du header */
+  border-bottom: 2px solid #00AEEF;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+header.hide-on-scroll {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .logo img {
@@ -331,64 +339,114 @@ footer {
 
 .instagram h2 {
   color: #00AEEF;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+  font-size: 2rem;
 }
 
-/* Responsive (Mobile) */
+.instagram a {
+  font-size: 1.2rem;
+  color: #F36F21;
+  font-weight: bold;
+    text-decoration: none;
+}
+
+.instagram a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive : adaptation de la section équipe sur petits écrans */
 @media (max-width: 768px) {
-  header {
+  .team {
     flex-direction: column;
-    align-items: flex-end;
-    padding: 10px 20px;
+    align-items: center;
+    gap: 30px;
   }
-
-  nav ul {
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  .section-hero {
-    height: auto;
-    padding: 60px 20px;
-  }
-
-  .hero-content {
+  .team-member {
     max-width: 90%;
   }
+}
 
-  .section-hero h1 {
-    font-size: 2.5rem;
-  }
 
-  .section-hero p {
-    font-size: 1.2rem;
-  }
 
-  .hero-logo {
-    width: 120px;
-  }
+/* Services page - réservation matériel */
 
-  main {
-    padding: 30px 15px;
-  }
+.page-content {
+  max-width: 800px;
+  margin: 60px auto 80px;
+  padding: 0 20px;
+  text-align: center;
+}
 
-  .section {
-    flex-direction: column;
-    padding-bottom: 40px;
-    margin-bottom: 40px;
-  }
+.page-content h1 {
+  font-size: 2.8rem;
+  color: #00AEEF;
+  margin-bottom: 25px;
+}
 
-  .section-left .text,
-  .section-right .text,
-  .text,
-  .image {
-    max-width: 100%;
-    text-align: center;
-  }
+.service-step {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 25px 20px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
 
-  .carousel {
-    aspect-ratio: 4 / 3;
-  }
+.service-step:hover {
+  transform: translateY(-3px);
+}
+
+.service-step h2 {
+  color: #F36F21;
+  margin-bottom: 12px;
+  font-size: 1.8rem;
+}
+
+.service-step p {
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 14px 40px;
+  background-color: #F36F21;
+  color: white;
+  font-weight: 700;
+  border-radius: 15px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.btn-primary:hover {
+  background-color: #00AEEF;
+}
+
+/* Style spécifique pour la partie inventaire */
+.alert-inventory {
+  border: 2px solid #00AEEF;
+  background: #e6f7ff;
+}
+
+.promo {
+  margin-bottom: 80px;
+}
+
+
+/* Panthéon */
+.promo h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #F36F21;
+  margin-bottom: 40px;
+  border-bottom: 2px solid #00AEEF;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.team-member p {
+  margin: 0.5em 0;
 }
