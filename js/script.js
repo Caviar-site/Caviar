@@ -66,3 +66,22 @@ window.addEventListener('scroll', () => {
   }
   lastScrollY = window.scrollY;
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('header');
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 50) {
+      // Scroll vers le bas + scroll > 50px : cacher header
+      header.classList.add('scrolled');
+    } else {
+      // Scroll vers le haut ou haut de page : afficher header
+      header.classList.remove('scrolled');
+    }
+    lastScrollY = currentScrollY;
+  });
+});
