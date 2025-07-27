@@ -28,6 +28,14 @@ header {
   justify-content: space-between;
   padding: 15px 40px;
   border-bottom: 2px solid #00AEEF;
+  transition: opacity 0.1s ease, transform 0.1s ease;
+}
+
+/* Header hide on scroll: plus rapide disparition */
+header.scrolled {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
 }
 
 .logo img {
@@ -44,14 +52,24 @@ nav a {
   font-weight: 700;
   color: #F36F21;
   transition: color 0.3s;
-}
-nav a {
-  font-weight: 700;
-  color: #F36F21;
-  transition: color 0.3s;
   font-size: 16px;       /* Fixe la taille pour éviter les variations */
   line-height: 1.5;      /* Fixe la hauteur de ligne pour cohérence */
   display: inline-block; /* Pour éviter que le texte "saute" */
+}
+
+/* Responsive header - mobile */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-end; /* Alignement à droite */
+    padding: 15px 20px;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: flex-end; /* Aligne les liens à droite */
+  }
 }
 
 /* Général */
