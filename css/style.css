@@ -63,6 +63,21 @@ nav a:hover {
   color: #00AEEF; 
 }
 
+/* Responsive header - mobile */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-end; /* Alignement à droite */
+    padding: 15px 20px;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: flex-end; /* Aligne les liens à droite */
+  }
+}
+
 /* Hero Section */
 .section-hero {
   position: relative;
