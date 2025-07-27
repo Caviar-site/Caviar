@@ -14,25 +14,23 @@ body, html {
 a {
   text-decoration: none;
   color: inherit;
-  transition: color 0.3s ease;
-}
-body {
-  overflow-x: hidden;
+  transition: color 0.3s ease; /* Ajouté : transition douce sur les liens */
 }
 
 /* Header */
 header {
   position: sticky;
   top: 0;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: white; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
   z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px 40px;
-  border-bottom: 2px solid #00AEEF;
+  border-bottom: 2px solid #00AEEF; /* Ligne fine bleue en bas du header */
 }
+
 .logo img {
   height: 50px;
 }
@@ -47,12 +45,12 @@ nav a {
   font-weight: 700;
   color: #F36F21;
   transition: color 0.3s;
-  font-size: 16px;
-  line-height: 1.5;
-  display: inline-block;
+  font-size: 16px;       /* Fixe la taille pour éviter les variations */
+  line-height: 1.5;      /* Fixe la hauteur de ligne pour cohérence */
+  display: inline-block; /* Pour éviter que le texte "saute" */
 }
 nav a:hover {
-  color: #00AEEF;
+  color: #00AEEF; 
 }
 
 /* Hero Section */
@@ -112,11 +110,12 @@ main {
   gap: 40px;
   margin-bottom: 80px;
   padding-bottom: 60px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ddd; /* ligne de séparation */
 }
 .section:last-child {
   border-bottom: none;
 }
+/* Section centered (image au-dessus du texte) */
 .section-centered {
   flex-direction: column;
   text-align: center;
@@ -129,6 +128,7 @@ main {
 .section-centered .image {
   margin-bottom: 30px;
 }
+/* Alternance gauche-droite */
 .section-left .text {
   order: 1;
 }
@@ -141,6 +141,7 @@ main {
 .section-right .image {
   order: 1;
 }
+/* Text and image styles */
 .text {
   flex: 1;
   max-width: 600px;
@@ -173,15 +174,17 @@ main {
 .carousel {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 3 / 2;  /* fixe ratio sans fixer la hauteur */
   overflow: hidden;
   border-radius: 12px;
 }
+
 .carousel-images {
   position: relative;
   width: 100%;
   height: 100%;
 }
+
 .carousel-images img {
   position: absolute;
   top: 0;
@@ -194,10 +197,13 @@ main {
   transition: opacity 1s ease;
   z-index: 0;
 }
+
 .carousel-images img.active {
   opacity: 1;
   z-index: 1;
 }
+
+/* Dots */
 .carousel-dots {
   display: flex;
   justify-content: center;
@@ -218,6 +224,8 @@ main {
 .carousel-dots .dot.active {
   background: #F36F21;
 }
+
+/* Arrows */
 .carousel-arrow {
   position: absolute;
   top: 50%;
@@ -242,16 +250,14 @@ main {
 .btn-primary {
   display: inline-block;
   padding: 14px 40px;
-  background-color: #F36F21;
+  background-color: #F36F21; 
   color: white;
   font-weight: 700;
   border-radius: 15px;
   transition: background-color 0.3s ease;
-  text-decoration: none;
-  font-size: 1.1rem;
 }
 .btn-primary:hover {
-  background-color: #00AEEF;
+  background-color: #d95d17; /* Modifié : léger assombrissement au hover */
 }
 
 /* Footer */
@@ -263,7 +269,7 @@ footer {
   color: #555;
 }
 
-/* Contact / Équipe */
+/* Contact / Section équipe */
 .team {
   display: flex;
   justify-content: center;
@@ -271,6 +277,7 @@ footer {
   flex-wrap: wrap;
   margin-bottom: 60px;
 }
+
 .team-member {
   background: #f9f9f9;
   padding: 20px;
@@ -280,9 +287,11 @@ footer {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
+
 .team-member:hover {
   transform: translateY(-5px);
 }
+
 .team-member img {
   width: 150px;
   height: 150px;
@@ -291,21 +300,25 @@ footer {
   margin-bottom: 15px;
   border: 3px solid #00AEEF;
 }
+
 .team-member h3 {
   margin: 10px 0 5px;
   color: #00AEEF;
 }
+
 .team-member p strong {
   color: #F36F21;
 }
+
 .team-member a {
   display: inline-block;
   margin: 10px 10px 0 10px;
   color: #00AEEF;
   font-weight: 600;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease; /* Ajouté : transition douce sur les liens */
 }
+
 .team-member a:hover {
   text-decoration: underline;
 }
@@ -315,97 +328,23 @@ footer {
   text-align: center;
   margin-top: 40px;
 }
+
 .instagram h2 {
   color: #00AEEF;
-  margin-bottom: 15px;
-  font-size: 2rem;
-}
-.instagram a {
-  font-size: 1.2rem;
-  color: #F36F21;
-  font-weight: bold;
-  text-decoration: none;
-}
-.instagram a:hover {
-  text-decoration: underline;
+  margin-bottom: 30px;
 }
 
-/* Responsive équipe */
-@media (max-width: 768px) {
-  .team {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-  .team-member {
-    max-width: 90%;
-  }
-}
-
-/* Services page - réservation matériel */
-.page-content {
-  max-width: 800px;
-  margin: 60px auto 80px;
-  padding: 0 20px;
-  text-align: center;
-}
-.page-content h1 {
-  font-size: 2.8rem;
-  color: #00AEEF;
-  margin-bottom: 25px;
-}
-.service-step {
-  background: #f9f9f9;
-  border-radius: 12px;
-  padding: 25px 20px;
-  margin-bottom: 40px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
-}
-.service-step:hover {
-  transform: translateY(-3px);
-}
-.service-step h2 {
-  color: #F36F21;
-  margin-bottom: 12px;
-  font-size: 1.8rem;
-}
-.service-step p {
-  color: #333;
-  font-size: 1.1rem;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
-.alert-inventory {
-  border: 2px solid #00AEEF;
-  background: #e6f7ff;
-}
-.promo {
-  margin-bottom: 80px;
-}
-.promo h2 {
-  text-align: center;
-  font-size: 2.2rem;
-  color: #F36F21;
-  margin-bottom: 40px;
-  border-bottom: 2px solid #00AEEF;
-  display: inline-block;
-  padding-bottom: 10px;
-}
-.team-member p {
-  margin: 0.5em 0;
-}
-
-/* --- Adaptations responsive mobile --- */
+/* Responsive (Mobile) */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     padding: 10px 20px;
   }
 
   nav ul {
     flex-direction: column;
+    align-items: flex-end;
     gap: 10px;
     margin-top: 10px;
   }
@@ -431,10 +370,25 @@ footer {
     width: 120px;
   }
 
-  .hero-background {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #000;
+  main {
+    padding: 30px 15px;
+  }
+
+  .section {
+    flex-direction: column;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+  }
+
+  .section-left .text,
+  .section-right .text,
+  .text,
+  .image {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .carousel {
+    aspect-ratio: 4 / 3;
   }
 }
