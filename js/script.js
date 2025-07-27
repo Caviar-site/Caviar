@@ -2,6 +2,7 @@ const images = document.querySelectorAll('.carousel-images img');
 const prevButton = document.querySelector('.carousel-arrow.prev');
 const nextButton = document.querySelector('.carousel-arrow.next');
 const carouselImages = document.querySelector('.carousel-images');
+const creditEl = document.querySelector('.carousel-credit');
 
 let currentIndex = 0;
 let interval;
@@ -11,11 +12,17 @@ function updateSlidePosition() {
   carouselImages.style.transform = `translateX(-${currentIndex * width}px)`;
 }
 
+function updateCredit(index) {
+  const creditText = images[index].dataset.credit || '';
+  creditEl.textContent = creditText;
+}
+
 function showSlide(index) {
   if (index < 0) index = images.length - 1;
   if (index >= images.length) index = 0;
   currentIndex = index;
   updateSlidePosition();
+  updateCredit(currentIndex);
 }
 
 function nextSlide() {
@@ -30,6 +37,7 @@ function resetInterval() {
   clearInterval(interval);
   interval = setInterval(nextSlide, 5000);
 }
+
 
 // Navigation via arrows
 nextButton.addEventListener('click', () => {
@@ -80,19 +88,41 @@ window.addEventListener('keydown', e => {
   }
 });
 
-// Initial position update
+// Initial position and credit update
 window.addEventListener('resize', updateSlidePosition);
 updateSlidePosition();
+updateCredit(currentIndex);
 
-// Header disparition rapide au scroll (idem)
+
+// Header disparition rapide au scroll
 const header = document.querySelector('header');
 let lastScrollY = window.scrollY;
 
 window.addEventListener('scroll', () => {
   if (window.scrollY > lastScrollY && window.scrollY > 50) {
+    // scroll vers le bas -> cacher le header
     header.classList.add('scrolled');
   } else {
+    // scroll vers le haut -> afficher le header
     header.classList.remove('scrolled');
   }
   lastScrollY = window.scrollY;
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('header');
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 50) {
+      // Scroll vers le bas + scroll > 50px : cacher header
+      header.classList.add('scrolled');
+    } else {
+      // Scroll vers le haut ou haut de page : afficher header
+      header.classList.remove('scrolled');
+    }
+    lastScrollY = currentScrollY;
+  });
 });
