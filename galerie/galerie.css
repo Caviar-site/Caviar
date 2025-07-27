@@ -17,6 +17,8 @@ a {
 }
 
 /* Header */
+/* Header */
+
 header {
   position: sticky;
   top: 0;
@@ -38,6 +40,7 @@ header.scrolled {
   pointer-events: none;
 }
 
+
 .logo img {
   height: 50px;
 }
@@ -55,6 +58,9 @@ nav a {
   font-size: 16px;       /* Fixe la taille pour éviter les variations */
   line-height: 1.5;      /* Fixe la hauteur de ligne pour cohérence */
   display: inline-block; /* Pour éviter que le texte "saute" */
+}
+nav a:hover {
+  color: #00AEEF; 
 }
 
 /* Responsive header - mobile */
