@@ -28,13 +28,13 @@ header {
   justify-content: space-between;
   padding: 15px 40px;
   border-bottom: 2px solid #00AEEF;
-  transition: opacity 0.1s ease, transform 0.1s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* Header hide on scroll: plus rapide disparition */
 header.scrolled {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-20px);
   pointer-events: none;
 }
 
