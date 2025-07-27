@@ -205,6 +205,20 @@ main {
   border-radius: 12px;
 }
 
+.carousel-credit {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;  /* tu peux mettre right: 12px; si tu préfères à droite */
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-shadow: 0 0 5px rgba(0,0,0,0.7);
+  pointer-events: none; /* pour que ça ne bloque pas les clics */
+  user-select: none;
+  z-index: 5;
+}
+
+
 .carousel-images {
   display: flex;
   transition: transform 0.6s ease-in-out;
