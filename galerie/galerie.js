@@ -26,3 +26,18 @@ document.querySelectorAll('.collapsible').forEach(button => {
     }
   });
 });
+
+// Header disparition rapide au scroll
+const header = document.querySelector('header');
+let lastScrollY = window.scrollY;
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > lastScrollY && window.scrollY > 50) {
+    // scroll vers le bas -> cacher le header
+    header.classList.add('scrolled');
+  } else {
+    // scroll vers le haut -> afficher le header
+    header.classList.remove('scrolled');
+  }
+  lastScrollY = window.scrollY;
+});
