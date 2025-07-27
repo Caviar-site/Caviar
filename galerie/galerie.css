@@ -1,0 +1,169 @@
+/* Reset & base */
+* {
+  box-sizing: border-box;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #1E1E1E;
+  background: #fff;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  background: white; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  border-bottom: 2px solid #00AEEF;
+}
+
+.logo img {
+  height: 50px;
+}
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  font-weight: 700;
+  color: #F36F21;
+  transition: color 0.3s;
+}
+nav a {
+  font-weight: 700;
+  color: #F36F21;
+  transition: color 0.3s;
+  font-size: 16px;       /* Fixe la taille pour éviter les variations */
+  line-height: 1.5;      /* Fixe la hauteur de ligne pour cohérence */
+  display: inline-block; /* Pour éviter que le texte "saute" */
+}
+
+/* Général */
+h2 {
+  color: #00AEEF;
+}
+
+main {
+  padding: 2em;
+}
+
+/* Onglets */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  background: #f9f9f9;
+  padding: 1em;
+  border-bottom: 2px solid #eee;
+}
+
+.tab-button {
+  background: none;
+  border: 2px solid #00AEEF;
+  color: #00AEEF;
+  padding: 0.5em 1.2em;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.tab-button.active {
+  background: #00AEEF;
+  color: white;
+}
+
+/* Affichage par année */
+.year-section {
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.year-section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Albums */
+.event, .collapsible {
+  margin: 0.75em 0;
+  padding: 1em;
+  background: #FFFFFF;
+  border-left: 5px solid #F36F21;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.event:hover {
+  background: #f0f8ff;
+  transform: translateY(-2px);
+}
+
+.event a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Flèche animée */
+.collapsible {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.collapsible::after {
+  content: '▼';
+  color: #00AEEF;
+  font-size: 0.9em;
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+
+.collapsible.active::after {
+  transform: rotate(180deg);
+}
+
+/* Sous-albums */
+.content {
+  display: none;
+  margin-left: 1.5em;
+  margin-top: 0.5em;
+  padding: 0.75em 1em;
+  background: #F8F8F8;
+  border-left: 3px solid #F36F21;
+  border-radius: 6px;
+}
+
+.content a {
+  display: block;
+  margin: 0.3em 0;
+  color: #00AEEF;
+  text-decoration: underline;
+}
