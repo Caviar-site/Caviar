@@ -50,3 +50,19 @@ prevButton.addEventListener('click', () => {
 
 // Auto slide
 interval = setInterval(nextSlide, 5000);
+
+
+// header
+
+const header = document.querySelector('header');
+let lastScrollY = window.scrollY;
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > lastScrollY && window.scrollY > 50) {
+    header.classList.add('hide-on-scroll');
+  } else {
+    header.classList.remove('hide-on-scroll');
+  }
+  lastScrollY = window.scrollY;
+});
+
