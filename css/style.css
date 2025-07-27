@@ -218,7 +218,6 @@ main {
   z-index: 5;
 }
 
-
 .carousel-images {
   display: flex;
   transition: transform 0.6s ease-in-out;
@@ -307,79 +306,6 @@ main {
   right: 10px;
 }
 
-/* Responsive mobile */
-@media (max-width: 768px) {
-  .carousel {
-    max-width: 100%;
-    aspect-ratio: 4 / 3;
-  }
-  .carousel-arrow {
-    font-size: 1.8rem;
-    padding: 8px 14px;
-  }
-  .carousel-dots .dot {
-    width: 10px;
-    height: 10px;
-  }
-}
-
-
-/* Dots */
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  gap: 10px;
-  z-index: 2;
-}
-.carousel-dots .dot {
-  width: 12px;
-  height: 12px;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 50%;
-  cursor: pointer;
-}
-.carousel-dots .dot.active {
-  background: #F36F21;
-}
-
-/* Arrows */
-.carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  font-size: 2rem;
-  padding: 8px 16px;
-  cursor: pointer;
-  z-index: 2;
-  border-radius: 50%;
-}
-.carousel-arrow.prev {
-  left: 10px;
-}
-.carousel-arrow.next {
-  right: 10px;
-}
-
-/* Buttons */
-.btn-primary {
-  display: inline-block;
-  padding: 14px 40px;
-  background-color: #F36F21; 
-  color: white;
-  font-weight: 700;
-  border-radius: 15px;
-  transition: background-color 0.3s ease;
-}
-.btn-primary:hover {
-  background-color: #d95d17; /* Modifié : léger assombrissement au hover */
-}
 
 
 
